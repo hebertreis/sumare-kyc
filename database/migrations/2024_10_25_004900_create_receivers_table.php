@@ -85,10 +85,7 @@ return new class extends Migration
             $table->boolean('transfer_enabled')->nullable();
             $table->string('metadata')->nullable();
             $table->string('code')->nullable();
-            $table->foreignId('default_bank_account_id')->nullable()->constrained('bank_accounts')->onDelete('cascade');
-            $table->foreignId('automatic_anticipation_settings_id')->nullable()->constrained('automatic_anticipation_settings')->onDelete('cascade');
             $table->boolean('enabled')->nullable();
-            $table->foreignId('register_address_id')->nullable()->constrained('addresses')->onDelete('cascade');
             $table->date('birthdate')->nullable();
             $table->string('document')->nullable();
             $table->string('mother_name')->nullable();
@@ -102,8 +99,6 @@ return new class extends Migration
             $table->string('professional_occupation')->nullable();
             $table->decimal('annual_revenue', 10, 2)->nullable();
             $table->enum('corporation_type', ['LTDA', 'MEI', 'SA'])->nullable();
-            $table->foreignId('default_phone_id')->nullable()->constrained('phones')->onDelete('cascade');
-            $table->foreignId('main_address_id')->nullable()->constrained('addresses')->onDelete('cascade');
             $table->string('email')->nullable();
             $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('cascade');
             $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('cascade');
