@@ -1,0 +1,13 @@
+@import '/vendor/filament/filament/resources/css/theme.css';
+
+@config 'tailwind.config.js';
+
+.fi-topbar > nav {
+    @apply bg-blue-500; /* Change this to your desired color */
+    @apply shadow-none ring-0; /* Remove any existing shadow */
+}
+
+.fi-sidebar-header {
+    @apply bg-blue-500; /* Match sidebar header color */
+    @apply shadow-none ring-0;
+}
