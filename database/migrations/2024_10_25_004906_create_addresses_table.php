@@ -10,6 +10,8 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->integer('receiver_id');
+            $table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             $table->string('street');
             $table->string('street_number');
             $table->string('neighborhood');
