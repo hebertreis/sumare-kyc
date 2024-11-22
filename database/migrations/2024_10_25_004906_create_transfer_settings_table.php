@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('transfer_settings', function (Blueprint $table) {
             $table->id();
-            $table->integer('receiver_id');
+            $table->unsignedBigInteger('receiver_id');
             $table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             $table->integer('transfer_day');
             $table->enum('transfer_interval', ['Daily', 'Weekly', 'Monthly']);
