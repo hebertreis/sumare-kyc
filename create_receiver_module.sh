@@ -64,7 +64,7 @@ return new class extends Migration
     {
         Schema::create('transfer_settings', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->integer('transfer_day');
             \$table->enum('transfer_interval', ['Daily', 'Weekly', 'Monthly']);
@@ -94,7 +94,7 @@ return new class extends Migration
     {
         Schema::create('bank_accounts', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->string('account_number');
             \$table->string('bank');
@@ -129,7 +129,7 @@ return new class extends Migration
     {
         Schema::create('automatic_anticipation_settings', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->integer('delay');
             \$table->string('volume_percentage');
@@ -160,7 +160,7 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->string('street');
             \$table->string('street_number');
@@ -196,7 +196,7 @@ return new class extends Migration
     {
         Schema::create('register_information', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->date('birthdate')->nullable();
             \$table->string('document');
@@ -237,7 +237,7 @@ return new class extends Migration
     {
         Schema::create('phones', function (Blueprint \$table) {
             \$table->id();
-            \$table->unsignedBigInteger('receiver_id');
+            \$table->integer('receiver_id');
             \$table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             \$table->string('phone_number');
             \$table->enum('phone_type', ['mobile', 'landline']);

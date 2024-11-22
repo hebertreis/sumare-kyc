@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('bank_accounts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('receiver_id');
+            $table->integer('receiver_id');
             $table->foreign('receiver_id')->references('id')->on('receivers')->onDelete('cascade');
             $table->string('account_number');
             $table->string('bank');
